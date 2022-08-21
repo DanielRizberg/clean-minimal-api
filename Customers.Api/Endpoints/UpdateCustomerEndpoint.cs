@@ -1,5 +1,5 @@
-﻿using Customers.Api.Contracts.Requests;
-using Customers.Api.Contracts.Responses;
+﻿
+using ApiContracts.Requests;
 using Customers.Api.Mapping;
 using Customers.Api.Services;
 using FastEndpoints;

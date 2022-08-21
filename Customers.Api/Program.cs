@@ -1,7 +1,8 @@
-using Customers.Api.Contracts.Responses;
-using Customers.Api.Database;
-using Customers.Api.Repositories;
-using Customers.Api.Services;
+
+using ApiContracts.Responses;
+using ApiDataAccess;
+using ApiInterfaces;
+using ApiLogic;
 using Customers.Api.Validation;
 using FastEndpoints;
 using FastEndpoints.Swagger;
@@ -14,7 +15,7 @@ builder.Services.AddSwaggerDoc();
 
 builder.Services.AddSingleton<IDbConnectionFactory>(_ =>
     new SqliteConnectionFactory(config.GetValue<string>("Database:ConnectionString")));
-builder.Services.AddSingleton<DatabaseInitializer>();
+builder.Services.AddSingleton<IDatabaseInitializer,DatabaseInitializer>();
 builder.Services.AddSingleton<ICustomerRepository, CustomerRepository>();
 builder.Services.AddSingleton<ICustomerService, CustomerService>();
 
@@ -35,7 +36,7 @@ app.UseFastEndpoints(x =>
 app.UseOpenApi();
 app.UseSwaggerUi3(s => s.ConfigureDefaults());
 
-var databaseInitializer = app.Services.GetRequiredService<DatabaseInitializer>();
+var databaseInitializer = app.Services.GetRequiredService<IDatabaseInitializer>();
 await databaseInitializer.InitializeAsync();
 
 app.Run();
