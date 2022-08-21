@@ -1,6 +1,6 @@
 ﻿using ValueOf;
 
-namespace Customers.Api.Domain.Common;
+namespace ApiDomain.Common;
 
 public class CustomerId : ValueOf<Guid, CustomerId>
 {

@@ -1,4 +1,5 @@
-﻿using ApiContracts.Requests;
+﻿
+using ApiContracts.Requests;
 using ApiDomain;
 using ApiDomain.Common;
 using System;

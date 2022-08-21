@@ -1,7 +1,7 @@
-﻿using Customers.Api.Contracts.Requests;
-using Customers.Api.Contracts.Responses;
-using Customers.Api.Mapping;
-using Customers.Api.Services;
+﻿using ApiContracts.Requests;
+using ApiContracts.Responses;
+using ApiInterfaces;
+using ApiMapper;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization;
 

@@ -1,4 +1,5 @@
-using Customers.Api.Contracts.Responses;
+
+using ApiContracts.Responses;
 using Customers.Api.Endpoints;
 using FastEndpoints;
 

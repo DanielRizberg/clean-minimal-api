@@ -1,7 +1,9 @@
 ﻿using ApiContracts.Data;
 using ApiDomain;
 using ApiInterfaces;
-using Customers.Api.Services;
+using ApiMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +15,15 @@ namespace ApiLogic
     public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IDatabaseInitializer DatabaseInitializer;
 
-        public CustomerService(ICustomerRepository customerRepository)
+        public CustomerService(ICustomerRepository customerRepository, IDatabaseInitializer databaseInitializer)
         {
             _customerRepository = customerRepository;
+            DatabaseInitializer = databaseInitializer;
+            
         }
-
+    
         public async Task<bool> CreateAsync(Customer customer)
         {
             var existingUser = await _customerRepository.GetAsync(customer.Id.Value);
@@ -57,6 +62,8 @@ namespace ApiLogic
         {
             return await _customerRepository.DeleteAsync(id);
         }
+
+      
     }
 
 }

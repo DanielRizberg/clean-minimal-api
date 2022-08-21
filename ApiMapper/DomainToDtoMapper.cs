@@ -1,4 +1,5 @@
-﻿using ApiDomain;
+﻿using ApiContracts.Data;
+using ApiDomain;
 
 namespace ApiMapper
 {

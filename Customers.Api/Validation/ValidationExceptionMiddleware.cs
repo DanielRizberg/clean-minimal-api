@@ -1,4 +1,4 @@
-﻿using Customers.Api.Contracts.Responses;
+﻿using ApiContracts.Responses;
 using FluentValidation;
 
 namespace Customers.Api.Validation;

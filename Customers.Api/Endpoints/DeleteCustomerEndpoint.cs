@@ -1,5 +1,6 @@
-﻿using Customers.Api.Contracts.Requests;
-using Customers.Api.Services;
+﻿
+using ApiContracts.Requests;
+using ApiInterfaces;
 using FastEndpoints;
 using Microsoft.AspNetCore.Authorization;
 

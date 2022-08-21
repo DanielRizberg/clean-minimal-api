@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ApiInterfaces
 {
-    internal interface IDatabaseInitializer
+    public interface IDatabaseInitializer
     {
+        Task InitializeAsync(); 
     }
 }

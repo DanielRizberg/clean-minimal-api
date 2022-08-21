@@ -18,5 +18,6 @@ namespace ApiInterfaces
         Task<bool> UpdateAsync(Customer customer);
 
         Task<bool> DeleteAsync(Guid id);
+       
     }
 }

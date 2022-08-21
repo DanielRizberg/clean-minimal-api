@@ -1,4 +1,5 @@
-﻿using Customers.Api.Contracts.Requests;
+﻿
+using ApiContracts.Requests;
 using FluentValidation;
 
 namespace Customers.Api.Validation;
